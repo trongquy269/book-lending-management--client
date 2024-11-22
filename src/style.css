@@ -1,3 +1,55 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.input {
+    @apply border border-slate-400 rounded px-4 py-1 relative;
+}
+
+.input:has(> input) > input {
+    @apply w-full outline-none;
+    font-size: inherit;
+}
+
+.input:has(> input[type='text']) > label {
+    @apply absolute top-2/4 left-2 translate-y-[-50%] text-slate-400 duration-200 ease-in-out px-1 cursor-text;
+    font-size: inherit;
+}
+
+.input:has(> input[type='text']:focus) > label {
+    @apply top-0 text-blue-400 text-xs bg-white;
+}
+
+.input:has(> input[type='text']:not(:placeholder-shown)) > label {
+    @apply top-0 text-blue-400 text-xs bg-white;
+}
+
+.input:has(> input[type='date']) > label {
+    @apply absolute top-0 left-2 translate-y-[-50%] text-slate-400 duration-200 ease-in-out px-1 cursor-text text-sm bg-white;
+}
+
+.input:has(> input[type='date']:focus) > label {
+    @apply text-blue-400;
+}
+
+.textarea {
+    @apply border border-slate-400 rounded px-4 py-1 relative;
+}
+
+.textarea > textarea {
+    @apply w-full h-full outline-none;
+    font-size: inherit;
+}
+
+.textarea > label {
+    @apply absolute top-1 left-3 text-slate-400 duration-200 ease-in-out px-1 cursor-text;
+    font-size: inherit;
+}
+
+.textarea:has(> textarea:focus) > label {
+    @apply text-blue-400 top-0 translate-y-[-50%] text-sm bg-white;
+}
+
+.textarea:has(> textarea:not(:placeholder-shown)) > label {
+    @apply text-blue-400 top-0 translate-y-[-50%] text-sm bg-white;
+}
